@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Asalto</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div id="screenBlock" style="display: none;"></div>
+
+    <div id="game">
+        <div id="options">
+            <div id="o_w">
+                <div id="p1" class="_player"><span id="s_p1">H</span><div id="s-p1" data-p="s_p1">C</div></div>
+                <div id="vs" class="_vs">VS</div>
+                <div id="p2" class="_player"><span id="s_p2">C</span><div id="s-p2" data-p="s_p2">H</div></div>
+
+                <div id="ok">OK</div>
+                <div id="name">ASALTO</div>
+                <div id="help_mov"><label for="h_m_option"><input type="checkbox" id="h_m_option">Ayuda en movimientos</label></div>
+            </div>
+        </div>
+
+        <div id="info-game">
+            <div id="w_i_g">
+                <div id="turno">
+                    <div id="t_w">
+                        <div id="t_txt">Turno</div>
+                        <div id="t_img" class="space _torre _ficha_c"></div>
+                    </div>
+                </div>
+                <div id="fichas_comidas">
+                    <div id="fc_w">
+                        <div id="fc_txt">Fichas <div class="space _torre _ficha_c"></div> comidas: <span id="fc_nro">0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="spaces">
+            <!-- Torre -->
+            <div id="13" class="space _torre _t11 _ficha_t" data-ficha="t1" data-tipo-ficha="t" data-celda="13"></div>
+            <div id="14" class="space _torre _t12" data-ficha="" data-tipo-ficha="" data-celda="14"></div>
+            <div id="15" class="space _torre _t13 _ficha_t" data-ficha="t2" data-tipo-ficha="t" data-celda="15"></div>
+            <div id="23" class="space _torre _t21" data-ficha="" data-tipo-ficha="" data-celda="23"></div>
+            <div id="24" class="space _torre _t22" data-ficha="" data-tipo-ficha="" data-celda="24"></div>
+            <div id="25" class="space _torre _t23" data-ficha="" data-tipo-ficha="" data-celda="25"></div>
+            <div id="33" class="space _torre _t31" data-ficha="" data-tipo-ficha="" data-celda="33"></div>
+            <div id="34" class="space _torre _t32" data-ficha="" data-tipo-ficha="" data-celda="34"></div>
+            <div id="35" class="space _torre _t33" data-ficha="" data-tipo-ficha="" data-celda="35"></div>
+            <!---->
+
+            <div id="31" class="space _campo _c31 _ficha_c" data-ficha="c1" data-tipo-ficha="c" data-celda="31"></div>
+            <div id="32" class="space _campo _c32 _ficha_c" data-ficha="c2" data-tipo-ficha="c" data-celda="32"></div>
+            <div id="36" class="space _campo _c36 _ficha_c" data-ficha="c3" data-tipo-ficha="c" data-celda="36"></div>
+            <div id="37" class="space _campo _c37 _ficha_c" data-ficha="c4" data-tipo-ficha="c" data-celda="37"></div>
+            <div id="41" class="space _campo _c41 _ficha_c" data-ficha="c5" data-tipo-ficha="c" data-celda="41"></div>
+            <div id="42" class="space _campo _c42 _ficha_c" data-ficha="c6" data-tipo-ficha="c" data-celda="42"></div>
+            <div id="43" class="space _campo _c43 _ficha_c" data-ficha="c7" data-tipo-ficha="c" data-celda="43"></div>
+            <div id="44" class="space _campo _c44 _ficha_c" data-ficha="c8" data-tipo-ficha="c" data-celda="44"></div>
+            <div id="45" class="space _campo _c45 _ficha_c" data-ficha="c9" data-tipo-ficha="c" data-celda="45"></div>
+            <div id="46" class="space _campo _c46 _ficha_c" data-ficha="c10" data-tipo-ficha="c" data-celda="46"></div>
+            <div id="47" class="space _campo _c47 _ficha_c" data-ficha="c11" data-tipo-ficha="c" data-celda="47"></div>
+            <div id="51" class="space _campo _c51 _ficha_c" data-ficha="c12" data-tipo-ficha="c" data-celda="51"></div>
+            <div id="52" class="space _campo _c52 _ficha_c" data-ficha="c13" data-tipo-ficha="c" data-celda="52"></div>
+            <div id="53" class="space _campo _c53 _ficha_c" data-ficha="c14" data-tipo-ficha="c" data-celda="53"></div>
+            <div id="54" class="space _campo _c54 _ficha_c" data-ficha="c15" data-tipo-ficha="c" data-celda="54"></div>
+            <div id="55" class="space _campo _c55 _ficha_c" data-ficha="c16" data-tipo-ficha="c" data-celda="55"></div>
+            <div id="56" class="space _campo _c56 _ficha_c" data-ficha="c17" data-tipo-ficha="c" data-celda="56"></div>
+            <div id="57" class="space _campo _c57 _ficha_c" data-ficha="c18" data-tipo-ficha="c" data-celda="57"></div>
+            <div id="63" class="space _campo _c63 _ficha_c" data-ficha="c19" data-tipo-ficha="c" data-celda="63"></div>
+            <div id="64" class="space _campo _c64 _ficha_c" data-ficha="c20" data-tipo-ficha="c" data-celda="64"></div>
+            <div id="65" class="space _campo _c65 _ficha_c" data-ficha="c21" data-tipo-ficha="c" data-celda="65"></div>
+            <div id="73" class="space _campo _c73 _ficha_c" data-ficha="c22" data-tipo-ficha="c" data-celda="73"></div>
+            <div id="74" class="space _campo _c74 _ficha_c" data-ficha="c23" data-tipo-ficha="c" data-celda="74"></div>
+            <div id="75" class="space _campo _c75 _ficha_c" data-ficha="c24" data-tipo-ficha="c" data-celda="75"></div>
+        </div>
+        <div id="celdas">
+            <div id="fondo_torre"></div>
+
+            <!--####################################################-->
+            <!--####################################################-->
+            <!-- Líneas que indican el moviento de las fichas -->
+            <!-- Diagonales -->
+            <div id="13-24" class="_13-24 _line"></div>
+            <div id="15-24" class="_15-24 _line"></div>
+            <div id="24-33" class="_24-33 _line"></div>
+            <div id="24-35" class="_24-35 _line"></div>
+
+            <div id="31-42" class="_31-42 _line"></div>
+            <div id="33-42" class="_33-42 _line"></div>
+            <div id="33-44" class="_33-44 _line"></div>
+            <div id="35-44" class="_35-44 _line"></div>
+            <div id="35-46" class="_35-46 _line"></div>
+            <div id="37-46" class="_37-46 _line"></div>
+
+            <div id="42-51" class="_42-51 _line"></div>
+            <div id="42-53" class="_42-53 _line"></div>
+            <div id="44-53" class="_44-53 _line"></div>
+            <div id="44-55" class="_44-55 _line"></div>
+            <div id="46-55" class="_46-55 _line"></div>
+            <div id="46-57" class="_46-57 _line"></div>
+
+            <div id="53-64" class="_53-64 _line"></div>
+            <div id="55-64" class="_55-64 _line"></div>
+            <div id="64-73" class="_64-73 _line"></div>
+            <div id="64-75" class="_64-75 _line"></div>
+
+            <!-- verticales -->
+            <div id="13-23" class="_13-23 _line h_x_100"></div>
+            <div id="14-24" class="_14-24 _line h_x_100"></div>
+            <div id="15-25" class="_15-25 _line h_x_100"></div>
+            
+            <div id="23-33" class="_23-33 _line h_x_100"></div>
+            <div id="24-34" class="_24-34 _line h_x_100"></div>
+            <div id="25-35" class="_25-35 _line h_x_100"></div>
+
+            <div id="31-41" class="_31-41 _line h_x_100"></div>
+            <div id="32-42" class="_32-42 _line h_x_100"></div>
+            <div id="33-43" class="_33-43 _line h_x_100"></div>
+            <div id="34-44" class="_34-44 _line h_x_100"></div>
+            <div id="35-45" class="_35-45 _line h_x_100"></div>
+            <div id="36-46" class="_36-46 _line h_x_100"></div>
+            <div id="37-47" class="_37-47 _line h_x_100"></div>
+
+            <div id="41-51" class="_41-51 _line h_x_100"></div>
+            <div id="42-52" class="_42-52 _line h_x_100"></div>
+            <div id="43-53" class="_43-53 _line h_x_100"></div>
+            <div id="44-54" class="_44-54 _line h_x_100"></div>
+            <div id="45-55" class="_45-55 _line h_x_100"></div>
+            <div id="46-56" class="_46-56 _line h_x_100"></div>
+            <div id="47-57" class="_47-57 _line h_x_100"></div>
+
+            <div id="53-63" class="_53-63 _line h_x_100"></div>
+            <div id="54-64" class="_54-64 _line h_x_100"></div>
+            <div id="55-65" class="_55-65 _line h_x_100"></div>
+
+            <div id="63-73" class="_63-73 _line h_x_100"></div>
+            <div id="64-74" class="_64-74 _line h_x_100"></div>
+            <div id="65-75" class="_65-75 _line h_x_100"></div>
+
+            <!-- horizontales -->
+            <div id="13-14" class="_13-14 _line w_x_100"></div>
+            <div id="14-15" class="_14-15 _line w_x_100"></div>
+
+            <div id="23-24" class="_23-24 _line w_x_100"></div>
+            <div id="24-25" class="_24-25 _line w_x_100"></div>
+
+            <div id="31-32" class="_31-32 _line w_x_100"></div>
+            <div id="32-33" class="_32-33 _line w_x_100"></div>
+            <div id="33-34" class="_33-34 _line w_x_100"></div>
+            <div id="34-35" class="_34-35 _line w_x_100"></div>
+            <div id="35-36" class="_35-36 _line w_x_100"></div>
+            <div id="36-37" class="_36-37 _line w_x_100"></div>
+
+            <div id="41-42" class="_41-42 _line w_x_100"></div>
+            <div id="42-43" class="_42-43 _line w_x_100"></div>
+            <div id="43-44" class="_43-44 _line w_x_100"></div>
+            <div id="44-45" class="_44-45 _line w_x_100"></div>
+            <div id="45-46" class="_45-46 _line w_x_100"></div>
+            <div id="46-47" class="_46-47 _line w_x_100"></div>
+
+            <div id="51-52" class="_51-52 _line w_x_100"></div>
+            <div id="52-53" class="_52-53 _line w_x_100"></div>
+            <div id="53-54" class="_53-54 _line w_x_100"></div>
+            <div id="54-55" class="_54-55 _line w_x_100"></div>
+            <div id="55-56" class="_55-56 _line w_x_100"></div>
+            <div id="56-57" class="_56-57 _line w_x_100"></div>
+
+            <div id="63-64" class="_63-64 _line w_x_100"></div>
+            <div id="64-65" class="_64-65 _line w_x_100"></div>
+
+            <div id="73-74" class="_73-74 _line w_x_100"></div>
+            <div id="74-75" class="_74-75 _line w_x_100"></div>
+            <!--####################################################-->
+            <!--####################################################-->
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+
+            <div id="" class="square square_br square_bt square_bl"></div>
+            <div id="" class="square square_br square_bt"></div>
+            
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+
+            <div id="" class="square square_br square_bt square_bl"></div>
+            <div id="" class="square square_br square_bt"></div>
+
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+
+            <div id="" class="square square_br square_bt square_bl"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt square_bl square_bb"></div>
+            <div id="" class="square square_br square_bt square_bb"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt"></div>
+            <div id="" class="square square_br square_bt square_bb"></div>
+            <div id="" class="square square_br square_bt square_bb"></div>
+
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+
+            <div id="" class="square square_br square_bt square_bl"></div>
+            <div id="" class="square square_br square_bt"></div>
+            
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+            
+            <div id="" class="square square_br square_bt square_bb square_bl"></div>
+            <div id="" class="square square_br square_bt square_bb"></div>
+            
+            <!-- oculto -->
+            <div id="" class="square oculto"></div>
+            <div id="" class="square oculto"></div>
+            <!---->
+        </div>
+    </div>
+</body>
+</html>

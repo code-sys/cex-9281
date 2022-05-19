@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    padding: 0.5rem;
+    height: 4em;
+}
+
+.btn-sidebar {
+    margin-right: 0.4rem;
+}
+
+.company {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.user {
+    display: flex;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.ui-lastname {
+    font-size: 0.8rem;
+}
+
+.user-logout {
+    margin-left: 0.4rem;
+}
+
+@media screen and (max-width: 30em) {
+    .user-info {
+        display: none;
+    }
+}

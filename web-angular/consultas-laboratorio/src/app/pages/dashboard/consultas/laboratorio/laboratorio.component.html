@@ -1,0 +1,24 @@
+<div class="background-banner"></div>
+<app-menubar></app-menubar>
+<app-sidebar (pdfPorObtener)="obtenerPdf($event)"></app-sidebar>
+<app-visualizador-pdf
+    [pdfSrc]="pdfSrc"
+    [accionPdf]="accionPdf"
+    [pdfRenderizado]="pdfRenderizado"
+    (finalizadoRenderizadoPdf)="finalizadoRenderizadoPdf($event)"
+    (descargarPdfVisualizado)="iniciarDescargaPdfVisualizado($event)">
+</app-visualizador-pdf>
+<p-confirmDialog
+    icon="pi pi-exclamation-triangle"
+    [closable]="false"
+    acceptLabel="Si"
+    rejectButtonStyleClass="p-button-text ignorar-estilos-personalizados">
+</p-confirmDialog>
+<p-toast position="bottom-left" [breakpoints]="{
+        '30em': {
+            width: '90%',
+            right: '5%',
+            left: '5%'
+        }
+    }">
+</p-toast>

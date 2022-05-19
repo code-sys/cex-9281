@@ -1,0 +1,26 @@
+.pdf-button + .pdf-button {
+    margin-left: 1rem;
+}
+
+.pdf-button {
+    height: 2.6rem !important;
+    width: 2.6rem !important;
+}
+
+.img-logo-sidebar {
+    position: absolute;
+    z-index: 3000;
+    top: 0.25em;
+    left: 1em;
+    pointer-events: none;
+}
+
+.img-logo-sidebar img {
+    height: 3.15em;
+    margin-bottom: 0.5em;
+}
+
+.img-logo-sidebar .info {
+    margin: -0.5rem 0 0 0;
+    font-size: 0.65em;
+}

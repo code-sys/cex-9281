@@ -1,0 +1,42 @@
+.visualizardor-pdf {
+    position: absolute;
+    top: 5em;
+    width: 100%;
+    height: calc(100% - 5em);
+}
+
+.cargando-pdf {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.overlay-descargando-pdf {
+    z-index: 9;
+}
+
+.descargando-pdf {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.controles-zoom {
+    position: absolute;
+    top: -2.1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.p-button.p-button-sm {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

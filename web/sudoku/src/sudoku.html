@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" type="text/css" href="sudoku.css"></link>
+
+    <style>
+        /* .sudoku {
+            margin-bottom: 40px;
+            margin-right: 40px;
+            display: inline-block;
+        } */
+    </style>
+</head>
+<body>
+    <div id="sudoku-wrapper">
+
+    </div>
+    <div id="sudoku"></div>
+
+    <script type="text/javascript" src="sudoku.js"></script>
+    <script type="text/javascript">
+        let sw = document.getElementById('sudoku-wrapper');
+        let cantSudokus = 10;
+
+        for (let i = 0; i <= cantSudokus; ++i) {
+            let content = document.createElement('sudoku');
+            content.classList.add('sudoku-wp');
+            sw.appendChild(content);
+        }
+
+        let sudokus = document.querySelectorAll('.sudoku-wp');
+
+        for (let j = 0; j <= cantSudokus; ++j) {
+            let s = new Sudoku('normal', sudokus[j]);
+            s.create()
+        }
+    </script>
+    <script type="text/javascript">
+        // let s = new Sudoku('hard', document.getElementById('sudoku'));
+        // s.create();
+    </script>
+</body>
+</html>

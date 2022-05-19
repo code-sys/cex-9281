@@ -1,0 +1,31 @@
+<header [ngStyle]="{ backgroundColor: 'var(--surface-100)' }">
+  <div class="btn-sidebar">
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-bars"
+      class="p-button-rounded p-button-text"
+      (click)="mostrarSidebar()">
+    </button>
+  </div>
+  <div class="company p-component">
+    <span>Clínica</span>
+  </div>
+  <div class="user">
+    <div class="user-info p-component">
+      <span class="ui-firstname">{{ nombres }}</span>
+      <span class="ui-lastname">{{ apellidos }}</span>
+    </div>
+    <div class="user-logout">
+      <button
+        pButton
+        pRipple
+        type="button"
+        icon="pi pi-user"
+        class="p-button-rounded p-button-text"
+        (click)="confirmarCerrarSesion()">
+      </button>
+    </div>
+  </div>
+</header>

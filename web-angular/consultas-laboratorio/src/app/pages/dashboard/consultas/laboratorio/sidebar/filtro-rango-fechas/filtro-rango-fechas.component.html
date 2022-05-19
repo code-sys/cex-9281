@@ -1,0 +1,50 @@
+<div class="fluid formgrid grid mt-1 mb-3">
+  <div class="field-checkbox md:col-12 md:mb-0">
+    <p-checkbox
+        inputId="filtroPorFecha"
+        [binary]="true"
+        [(ngModel)]="filtroPorFecha"
+        (onChange)="evtUsarFiltro()"
+    ></p-checkbox>
+    <label for="filtroPorFecha" class="p-component text-sm">Filtrar por rango de fechas</label>
+  </div>
+  <div class="field md:col-12 lg:col-6 flex flex-column md:mb-0" *ngIf="filtroPorFecha">
+    <label for="desde" class="p-component text-sm">Desde</label>
+    <p-calendar
+      id="desde"
+      styleClass="p-inputtext-sm"
+      dateFormat="dd/mm/yy"
+      [firstDayOfWeek]="1"
+      [showIcon]="true"
+      [minDate]="minFecha"
+      [maxDate]="maxFecha"
+      [showButtonBar]="true"
+      [touchUI]="true"
+      appendTo="body"
+      [(ngModel)]="fechaDesde"
+      (onClose)="validarRangoFecha('desde')"
+    ></p-calendar>
+  </div>
+
+  <div class="field md:col-12 lg:col-6 flex flex-column md:mb-0" *ngIf="filtroPorFecha">
+      <label for="hasta" class="p-component text-sm">Hasta</label>
+      <p-calendar
+        id="hasta"
+        styleClass="p-inputtext-sm"
+        dateFormat="dd/mm/yy"
+        [firstDayOfWeek]="1"
+        [showIcon]="true"
+        [minDate]="minFecha"
+        [maxDate]="maxFecha"
+        [showButtonBar]="true"
+        [touchUI]="true"
+        appendTo="body"
+        [(ngModel)]="fechaHasta"
+        (onClose)="validarRangoFecha('hasta')"
+      ></p-calendar>
+  </div>
+
+  <div class="field md:col-12 lg:col-6 flex flex-column" *ngIf="filtroPorFecha">
+    <p-button label="Filtrar" (onClick)="filtrarPorRangoFecha()"></p-button>
+  </div>
+</div>

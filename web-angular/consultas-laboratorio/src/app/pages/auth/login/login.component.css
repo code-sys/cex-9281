@@ -1,0 +1,29 @@
+.background-banner {
+    position: fixed;
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+    background-image: url("../../../../assets/img/banner.jpg");
+    background-position: 50% 50%;
+    z-index: -1;
+}
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 25em;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.txt-bienvenida,
+.p-component:not(.p-button):not(.p-error) {
+    color: rgb(0, 0, 100) !important;
+}
+
+@media screen and (max-width: 25em) {
+    .login-form {
+        width: 90% !important;
+    }
+}

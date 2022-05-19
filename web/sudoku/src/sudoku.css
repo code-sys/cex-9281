@@ -1,0 +1,166 @@
+.lighting {
+    background-color: #ffffa3 !important;
+    /* box-shadow: 0 0 13px #ffffa3; */
+}
+
+.lighting-line {
+    background-color: #ffffa366 !important; /* #ffffa34f */
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.w-sudoku {
+    margin-top: 12px;
+    display: flex;
+}
+
+.sudoku {
+    width: calc(70px * 9);
+    height: calc(70px * 9);
+    border: 3px solid #bbb;
+}
+
+.sudoku * {
+    font-size: 28px;
+    font-family: consolas;
+    box-sizing: border-box;
+}
+
+    .sudoku .row {
+        display: flex;
+        flex-direction: row;
+        height: calc(100% / 9);
+        border-bottom: 2px solid #ccc;
+    }
+    .sudoku .row:nth-child(3),
+    .sudoku .row:nth-child(6) {
+        border-bottom-width: 3px;
+        border-bottom-color: #bbb;
+    }
+    .sudoku .row:last-child {
+        border-bottom: none;
+    }
+
+        .sudoku .cell {
+            position: relative;
+            display: flex;
+            width: calc(100% / 9);
+            height: 100%;
+            text-align: center;
+            border-right: 2px solid #ccc;
+            align-items: center;
+        }
+        .sudoku .cell.no-interactive {
+            background-color: #cccccc2e;
+        }
+        .sudoku .cell:last-child {
+            border-right: none;
+        }
+        .sudoku .cell:nth-child(3),
+        .sudoku .cell:nth-child(6) {
+            border-right-width: 3px;
+            border-right-color: #bbb;
+        }
+
+        .sudoku .cell.ok {
+            background-color: #00fa9a47;
+        }
+        .sudoku .cell.bad {
+            background-color: #ff4b4b52;
+        }
+        .sudoku .cell.revealing {
+            background-color: #14beff57;
+        }
+
+            .sudoku .cell > div {
+                width: 100%;
+                pointer-events: none;
+            }
+
+            .sudoku .cell .w-posibility-numbers {
+                position: absolute;
+                top: 0;
+                font-size: 17px;
+                text-align: left;
+                font-family: arial;
+                font-weight: bold;
+                color: red;
+                pointer-events: none !important;
+            }
+
+
+    /**
+     * Style controls
+     */
+    .controls {
+        padding-left: 20px;
+    }
+
+        .controls #btn-show-number {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .controls .w-btn-number-to-add,
+        .controls .w-btn-posibility-number-to-add {
+            display: inline-block;
+            position: relative;
+            margin-right: 15px;
+        }
+
+            .controls .btn-number-to-add,
+            .controls .btn-posibility-number-to-add {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .controls .btn-number-to-add:last-child,
+            .controls .btn-posibility-number-to-add:last-child {
+                margin-right: 0;
+            }
+
+            .controls .counter-available-number {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                text-align: center;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+            }
+
+            .controls .counter-available-number.available {
+                background-color: blue;
+            }
+            .controls .counter-available-number.no-available {
+                background-color: red;
+            }
+
+.posibility-numbers-editor {
+    position: absolute;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+    pointer-events: all !important;
+    z-index: 1;
+    background-color: white;
+}
+
+    .btn-delete-posibility-number {
+        flex-grow: 1;
+        border: 1px solid white;
+        background-color: red;
+        color: white;
+        font-size: 16px;
+        font-family: arial;
+        font-weight: bold;
+        width: 33.33333%;
+    }

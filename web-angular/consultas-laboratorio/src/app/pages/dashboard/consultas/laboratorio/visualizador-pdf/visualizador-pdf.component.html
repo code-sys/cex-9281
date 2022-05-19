@@ -1,0 +1,56 @@
+<div class="visualizardor-pdf">
+    <p-progressSpinner
+        *ngIf="(descargandoPdf$ | async) && !(visualizandoPdf$ | async) && accionPdf == 'visualizar'"
+        class="cargando-pdf">
+    </p-progressSpinner>
+
+    <div *ngIf="accionPdf == 'descargar' && (descargandoPdf$ | async)"
+        class="p-component-overlay overlay-descargando-pdf"
+    >
+        <p-progressSpinner class="descargando-pdf"></p-progressSpinner>
+    </div>
+
+    <!-- <img *ngIf="!(visualizandoPdf$ | async) && !(descargandoPdf$ | async)"
+        class="logo"
+        src="assets/img/logo.png"/> -->
+
+    <span *ngIf="visualizandoPdf$ | async" class="p-buttonset controles-zoom">
+        <button pButton pRipple
+            icon="pi pi-minus"
+            class="p-button-sm"
+            (click)="zoom('-')"
+            [disabled]="btnDisminuirZoomInactivo">
+        </button>
+        <button pButton pRipple
+            icon="pi pi-plus"
+            class="p-button-sm"
+            (click)="zoom('+')"
+            [disabled]="btnAumentarZoomInactivo">
+        </button>
+        <button pButton pRipple
+            icon="pi pi-download"
+            class="p-button-sm"
+            (click)="iniciarDescargaPdfVisualizado()">
+        </button>
+
+    </span>
+
+    <p-messages *ngIf="(visualizandoPdf$ | async) && !pdfRenderizado" severity="info mx-4">
+        <ng-template pTemplate>
+            <i class="pi pi-info-circle" style="font-size: 1.5rem; margin-right: 0.5rem;"></i>
+            <div class="p-ml-2">Renderizando el archivo PDF.</div>
+        </ng-template>
+    </p-messages>
+
+    <pdf-viewer *ngIf="visualizandoPdf$ | async"
+        [src]="pdfSrc"
+        [render-text]="true"
+        [original-size]="false"
+        [fit-to-page]="true"
+        [autoresize]="true"
+        [show-borders]="true"
+        [zoom]="_zoom"
+        style="width: 100%; height: 100%;"
+        (pages-initialized)="pageInitialized($event)">
+    </pdf-viewer>
+</div>

@@ -1,0 +1,9 @@
+.background-banner {
+    position: fixed;
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+    background-image: url("../../../../../assets/img/banner.png");
+    background-position: 50% 50%;
+    z-index: -1;
+}

@@ -1,0 +1,55 @@
+.img-logo-maison-sante {
+    display: block;
+    margin: 1.5em auto 0 auto;
+}
+
+.img-pagina-no-encontrada {
+    z-index: -1;
+    background-image: url("../../../assets/img/not-found.png");
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.info {
+    width: 100%;
+    position: fixed;
+    bottom: 1.5em;
+    text-align: center;
+}
+
+.msje {
+    margin-bottom: 1.1em;
+}
+
+@media screen and (max-width: 49em) {
+    .img-logo-maison-sante {
+        margin-top: 2.5em;
+    }
+
+    .info {
+        bottom: 2.5em;
+    }
+
+    .msje {
+        margin-bottom: 1.5em;
+    }
+}
+
+@media screen and (max-width: 40em) {
+    .img-logo-maison-sante {
+        margin-top: 3.5em;
+    }
+
+    .info {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        bottom: 3.5em;
+    }
+}

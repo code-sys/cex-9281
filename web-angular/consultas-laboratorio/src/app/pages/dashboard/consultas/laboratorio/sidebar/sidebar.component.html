@@ -1,0 +1,27 @@
+<div *ngIf="display$ | async" class="img-logo-sidebar">
+    <img src="assets/img/logo.jpg" alt="Logo">
+    <p class="info p-component">Resultados procesados hasta el <b class="theme-text-color">31/12/2021</b></p>
+</div>
+<p-sidebar
+    [visible]="display$ | async"
+    (visibleChange)="ocultar($event)"
+    (onShow)="visible = true"
+    (onHide)="visible = false"
+    [modal]="true"
+    styleClass="p-sidebar-md"
+>
+    <div class="card">
+        <app-filtro-rango-fechas
+            (filtrar)="filtrarPorRangoFecha($event)"
+            (usarFiltro)="configurarFiltro($event)"
+        >
+        </app-filtro-rango-fechas>
+    </div>
+
+    <!-- <p-scrollPanel [style]="{ height: 'calc(100% - 4.4em)', width: '100%', border: '2px solid red'}"> -->
+        <app-tbl-pdfs-resultado-laboratorio
+            [pdfs]="pdfs"
+            (pdfSeleccionado)="pdfAObtener($event)">
+        </app-tbl-pdfs-resultado-laboratorio>
+    <!-- </p-scrollPanel> -->
+</p-sidebar>
